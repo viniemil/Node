@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import { request } from "https";
 import { Transaction } from "./transaction";
 
 export class User {
@@ -34,5 +35,19 @@ export class User {
   }
   get transactions() {
     return this._transactions;
+  }
+  userUpdate(name: string, age: number) {
+    this._name = name;
+    this._age = age;
+  }
+
+  toReturn() {
+    return {
+      id: this._id,
+      name: this._name,
+      cpf: this._cpf,
+      email: this._email,
+      age: this._age,
+    };
   }
 }

@@ -1,6 +1,6 @@
 import crypto from "crypto";
 
-export abstract class Transaction {
+export class Transaction {
   private _id: string;
   private _value: number;
   private _type: "income" | "outcome";
