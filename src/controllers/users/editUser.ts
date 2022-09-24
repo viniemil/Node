@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { usersApp } from "../db/users";
+import { usersApp } from "../../db/users";
 
 export class EditUserController {
   editUser(request: Request, response: Response) {

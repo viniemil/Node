@@ -7,4 +7,4 @@ app.use(express.json());
 
 appRoutes(app);
 
-app.listen(3333, () => console.log("API RODANDO"));
+app.listen(3333, () => console.log("API is running..."));

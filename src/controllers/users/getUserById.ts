@@ -1,6 +1,6 @@
-import { usersApp } from "../db/users";
+import { usersApp } from "../../db/users";
 import { Request, Response } from "express";
-import { User } from "../models/user";
+import { User } from "../../models/user";
 
 export class GetUserController {
   getUserById(request: Request, response: Response) {
