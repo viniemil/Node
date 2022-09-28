@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { usersApp } from "../db/users";
-import { User } from "../models/user";
+import { usersApp } from "../../db/users";
+import { User } from "../../models/user";
 
 export class CreateNewuser {
   createUser(request: Request, response: Response) {
