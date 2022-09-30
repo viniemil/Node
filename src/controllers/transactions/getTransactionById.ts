@@ -11,6 +11,6 @@ export class GetTransactionController {
       (trans) => id === trans.id
     );
 
-    return response.json(transactionFound);
+    return response.status(200).json(transactionFound);
   }
 }

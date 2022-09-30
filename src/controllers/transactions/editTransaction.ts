@@ -6,6 +6,10 @@ export class EditTransactionController {
     const { userId, id } = request.params;
     const { title, value, type } = request.body;
 
+    if (!title || !value || !type) {
+      return response.status(400).json({ message: "Dados inválidos" });
+    }
+
     const user = usersApp.find((user) => userId === user.id);
 
     const transactionFound = user?.transactions.find(
@@ -14,6 +18,6 @@ export class EditTransactionController {
 
     transactionFound?.transactionUpdate(title, value, type);
 
-    return response.json(transactionFound);
+    return response.status(200).json(transactionFound);
   }
 }

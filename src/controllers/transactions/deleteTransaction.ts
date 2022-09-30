@@ -11,6 +11,6 @@ export class DeleteTransactionController {
 
     user?.transactions.splice(indexUser, 1);
 
-    return response.json(user?.transactions);
+    return response.status(200).json(user?.transactions);
   }
 }

@@ -32,6 +32,8 @@ export class BalanceTransactionController {
       }
     );
 
-    return response.json({ transactions: transactions, balance: balance });
+    return response
+      .status(200)
+      .json({ transactions: transactions, balance: balance });
   }
 }

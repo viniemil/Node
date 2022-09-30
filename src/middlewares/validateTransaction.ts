@@ -3,14 +3,16 @@ import { usersApp } from "../db/users";
 
 export class validateTransactionMiddlewares {
   validateTransction(request: Request, response: Response, next: NextFunction) {
-    const { id } = request.params;
+    const { id, userId } = request.params;
 
     if (!id) {
       return response.status(404);
     }
 
-    const transactionsFound = usersApp.find((user) =>
-      user.transactions.forEach((transactions) => transactions.id === id)
+    const userFound = usersApp.find((user) => user.id === userId);
+
+    const transactionsFound = userFound?.transactions.find(
+      (transaction) => transaction.id === id
     );
 
     if (!transactionsFound) {
